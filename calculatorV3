@@ -1,0 +1,41 @@
+import math
+
+
+def getUserInput():
+    while True:
+        try:
+            num = int(input('Give a number: '))
+            return num
+        except (ValueError):
+            print("This input is invalid.")
+
+print('Calculator')
+go = True
+num1 = getUserInput()
+num2 = getUserInput()
+while go:
+    print('(1) + \n(2) - \n(3) *\n(4) / \n(5)sin(number1/number2) \n(6)cos(number1/number2) \n(7) Change numbers '
+          '\n(8) Quit ')
+    print('Current numbers: ' + str(num1) + ' ' + str(num2))
+    select = int(input('Please select something (1-6): '))
+    if select == 1:
+        print('The result is: ' + str(num1 + num2))
+    elif select == 2:
+        print('The result is: ' + str(num1 - num2))
+    elif select == 3:
+        print('The result is: ' + str(num1 * num2))
+    elif select == 4:
+        print('The result is: ' + str(num1 / num2))
+    elif select == 5:
+        print('The result is: ' + str(math.sin(num1 / num2)))
+    elif select == 6:
+        print('The result is: ' + str(math.cos(num1 / num2)))
+    elif select == 7:
+        num1 = getUserInput()
+        num2 = getUserInput()
+    elif select == 8:
+        go = False
+        print('Thank you!')
+    else:
+        print('Selection was not correct.')
+
